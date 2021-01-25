@@ -1,0 +1,21 @@
+version: "2.4"
+services:
+  backend:
+    build: backend
+    image: cccquest_backend
+    volumes:
+      - ./backend/cccquest_backend:/usr/src/app
+    command: "python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    environment:
+      - PYTHONUNBUFFERED=False
+  frontend:
+    build: frontend
+    image: cccquest_frontend
+    volumes:
+      - ./frontend/cccquest_frontend/public:/usr/src/app/public
+      - ./frontend/cccquest_frontend/src:/usr/src/app/src
+    command: "npm start"
+    ports:
+      - 3000:3000
