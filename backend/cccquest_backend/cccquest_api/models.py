@@ -7,7 +7,7 @@ class Question(models.Model):
 		return self.question_text
 
 class Choice(models.Model):
-	question = models.ForeignKey(Question, on_delete=models.CASCADE)
+	question = models.ForeignKey(Question, related_name='choices', on_delete=models.CASCADE)
 	choice_text = models.CharField(max_length=200)
 
 class Iteration(models.Model):
@@ -16,5 +16,5 @@ class Iteration(models.Model):
 	complete = models.BooleanField()
 
 class Answer(models.Model):
-	iteration = models.ForeignKey(Iteration, on_delete=models.CASCADE)
-	choice = models.ForeignKey(Choice, on_delete=models.PROTECT)
+	iteration = models.ForeignKey(Iteration, related_name='answers', on_delete=models.CASCADE)
+	choice = models.ForeignKey(Choice, related_name='answers', on_delete=models.PROTECT)
