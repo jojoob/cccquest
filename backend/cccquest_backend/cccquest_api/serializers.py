@@ -19,3 +19,8 @@ class IterationSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Iteration
 		fields = ('id', 'iteration_title', 'created', 'complete', 'answers')
+
+class AnswerSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Answer
+		fields = ('id', 'iteration', 'choice')
