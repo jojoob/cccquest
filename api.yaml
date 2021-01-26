@@ -1,0 +1,625 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /api/questions/:
+    get:
+      operationId: listQuestions
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Question'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createQuestion
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Question'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Question'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Question'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Question'
+          description: ''
+      tags:
+      - api
+  /api/questions/{id}/:
+    get:
+      operationId: retrieveQuestion
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this question.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Question'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateQuestion
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this question.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Question'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Question'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Question'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Question'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateQuestion
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this question.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Question'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Question'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Question'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Question'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyQuestion
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this question.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/choices/:
+    get:
+      operationId: listChoices
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Choice'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createChoice
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Choice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Choice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Choice'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Choice'
+          description: ''
+      tags:
+      - api
+  /api/choices/{id}/:
+    get:
+      operationId: retrieveChoice
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this choice.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Choice'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateChoice
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this choice.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Choice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Choice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Choice'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Choice'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateChoice
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this choice.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Choice'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Choice'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Choice'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Choice'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyChoice
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this choice.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/iterations/:
+    get:
+      operationId: listIterations
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Iteration'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createIteration
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Iteration'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Iteration'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Iteration'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Iteration'
+          description: ''
+      tags:
+      - api
+  /api/iterations/{id}/:
+    get:
+      operationId: retrieveIteration
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this iteration.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Iteration'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateIteration
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this iteration.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Iteration'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Iteration'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Iteration'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Iteration'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateIteration
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this iteration.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Iteration'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Iteration'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Iteration'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Iteration'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyIteration
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this iteration.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/answers/:
+    get:
+      operationId: listAnswers
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Answer'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createAnswer
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Answer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Answer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Answer'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+      tags:
+      - api
+  /api/answers/{id}/:
+    get:
+      operationId: retrieveAnswer
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this answer.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateAnswer
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this answer.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Answer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Answer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Answer'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateAnswer
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this answer.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Answer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Answer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Answer'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyAnswer
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this answer.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    Question:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        question_text:
+          type: string
+          maxLength: 200
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              question:
+                type: integer
+              choice_text:
+                type: string
+                maxLength: 200
+            required:
+            - question
+            - choice_text
+          readOnly: true
+      required:
+      - question_text
+    Choice:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        question:
+          type: integer
+        choice_text:
+          type: string
+          maxLength: 200
+      required:
+      - question
+      - choice_text
+    Iteration:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        iteration_title:
+          type: string
+          maxLength: 200
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        complete:
+          type: boolean
+        answers:
+          type: array
+          items:
+            type: string
+          readOnly: true
+      required:
+      - iteration_title
+      - complete
+    Answer:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        iteration:
+          type: integer
+        choice:
+          type: integer
+      required:
+      - iteration
+      - choice
