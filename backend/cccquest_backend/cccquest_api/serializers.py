@@ -7,14 +7,14 @@ class ChoiceSerializer(serializers.ModelSerializer):
 		fields = ('id', 'question', 'choice_text')
 
 class QuestionSerializer(serializers.ModelSerializer):
-	choices = ChoiceSerializer(many=True, read_only=True)
+	choices = ChoiceSerializer(many=True, read_only=True, required=False)
 
 	class Meta:
 		model = Question
 		fields = ('id', 'question_text', 'choices')
 
 class IterationSerializer(serializers.ModelSerializer):
-	answers = serializers.StringRelatedField(many=True)
+	answers = serializers.StringRelatedField(many=True, read_only=True, required=False)
 
 	class Meta:
 		model = Iteration
