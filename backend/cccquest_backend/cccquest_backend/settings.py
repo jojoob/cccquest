@@ -25,7 +25,7 @@ SECRET_KEY = 'fcuftp_+84vbar6&+y6vc_t*gljl$wy37)eew%pi@ov03la1a4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'backend']
 
 
 # Application definition
